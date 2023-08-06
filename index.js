@@ -44,13 +44,18 @@ checkSequence(userClickedPattern.length-1);
 }  
  //Random color generator
    function nextSequence(){ 
+    
     userClickedPattern= [] ; 
          $("h1").text("level "+(++level));
      var randomNumber=Math.floor(Math.random() * 4);
      var randomChosenColour=buttonColours[randomNumber];
+     
      flash(randomChosenColour);  
      playAudio(randomChosenColour);
      gamePattern.push(randomChosenColour)  ;
+  
+     
+    //  logArrayElementsWithDelay(gamePattern, 1000);
 }
 // audio sound generator
 function playAudio(randomChosenColour){
@@ -95,6 +100,17 @@ function restart() {
   gamePattern = [];
   started = false;
 }
+
+
+
+
+// function logArrayElementsWithDelay(array, delay) {
+//   for (let i = 0; i < array.length; i++) {
+//     setTimeout(() => {
+//       flash(array[i]);                                                 
+//     }, delay * i);
+//   }
+// }
 
 
 
